@@ -18,11 +18,29 @@
     <body>
         <div id="app">
             @include('layouts.partials.navbar')
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        @include('layouts.partials.sidebar')
+                    </div>
+                    <div class="col-md-9">
+                       @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                <p>
+                                    {{ session()->get('message') }}
+                                </p>
+                            </div>
+                        @endif
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
             <main class="py-4">
-                @yield('content')
             </main>
         </div>
         <!-- Scripts -->
         <script src="{{asset('js/app.js')}}"></script>
+        @yield('scripts')
     </body>
 </html>

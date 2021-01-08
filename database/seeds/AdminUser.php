@@ -7,7 +7,7 @@ use App\Profile;
 
 class AdminUser extends Seeder
 {
-    /**
+    /** 
      * Run the database seeds.
      *
      * @return void

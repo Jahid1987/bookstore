@@ -22,28 +22,45 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="">
               <span data-feather="file"></span>
-              Orders
+              vuejs
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link @if(request()->url() == route('admin.product.index')) {{'active'}} @endif" href="{{route('admin.product.index')}}">
+          <li class="nav-item dropdown">
+            <a id="categoryDropdown" class="nav-link @if(request()->url() == route('admin.product.index')) {{'active'}} @endif dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" area-expanded="false" >
               <span data-feather="shopping-cart"></span>
               Products
             </a>
+            <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+              <a class="dropdown-item" href="{{route('admin.product.create')}}">Add Product</a>
+              <a class="dropdown-item" href="{{route('admin.product.index')}}">All products</a>
+              <a class="dropdown-item" href="{{route('admin.product.trash')}}">Trashed products</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link @if(request()->url() == route('admin.category.index')) {{'active'}} @endif" href="{{route('admin.category.index')}}">
-              <span data-feather="users"></span>
+          <li class="nav-item dropdown">
+            <a id="categoryDropdown" class="nav-link @if(request()->url() == route('admin.category.index')) {{'active'}} @endif dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span data-feather="bar-chart-2"></span>
               Categories
             </a>
+            <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+              <a class="dropdown-item" href="{{route('admin.category.create')}}">Add Category</a>
+              <a class="dropdown-item" href="{{route('admin.category.index')}}">All Categories</a>
+              <a class="dropdown-item" href="{{route('admin.category.trashed')}}">Trashed Categories</a>
+            </div>
+            
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+                    <li class="nav-item dropdown">
+            <a id="customerDropdown" class="nav-link @if(request()->url() == route('admin.profile.index')) {{'active'}} @endif dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              Customers
             </a>
+            <div class="dropdown-menu" aria-labelledby="customerDropdown">
+              <a class="dropdown-item" href="{{route('admin.profile.create')}}">Add customer</a>
+              <a class="dropdown-item" href="{{route('admin.profile.index')}}">All Customers</a>
+              <a class="dropdown-item" href="{{route('admin.profile.trash')}}">Trashed Customers</a>
+            </div>
+            
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -86,3 +103,5 @@
         </ul>
       </div>
     </nav>
+  </div>
+</div>
